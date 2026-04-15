@@ -1,0 +1,26 @@
+CLIP test 500 dòng dataset - Nhận xét
+
+1. Tổng quan:
+- Text-only đạt accuracy 84.52%, precision 71.63%, recall 80.16%, F1-score 75.66%.
+- Image-only đạt accuracy 70.00%, precision 50.00%, recall 56.35%, F1-score 52.99%.
+- Multimodal đạt accuracy 81.90%, precision 69.23%, recall 71.43%, F1-score 70.31%.
+
+2. Nhận xét chính:
+- Text-only model tốt nhất: nó cho kết quả cao nhất và đặc biệt mạnh với class "real" (precision 91%).
+- Image-only model hoạt động kém hơn nhiều; embedding ảnh từ CLIP không đủ mạnh cho nhiệm vụ phát hiện tin giả trên dataset này.
+- Multimodal không cải thiện so với text-only, thậm chí có độ chính xác thấp hơn; điều này cho thấy cách kết hợp text và image hiện tại chưa tối ưu.
+
+3. Điểm yếu:
+- Image-only có precision và recall thấp, nhiều false positive / false negative.
+- Multimodal bị ảnh hưởng bởi noise từ thông tin ảnh, nên không tăng hiệu quả tổng thể.
+- Precision với class "fake" vẫn ở mức vừa phải (~69-72%), nghĩa là có khoảng 30% dự đoán fake có thể sai.
+
+4. Gợi ý cải thiện:
+- Xem lại cách kết hợp multimodal: thử weighted fusion, attention, hoặc fine-tune embeddings.
+- Ưu tiên text khi dữ liệu text có signal mạnh, chỉ dùng image như bổ trợ nếu có cách tích hợp tốt.
+- Kiểm tra kết quả trên toàn bộ dataset lớn hơn để xác nhận tính ổn định.
+
+5. Kết luận:
+- Text-only hiện là lựa chọn tốt nhất cho bài toán này.
+- Multimodal chưa chứng tỏ lợi ích nếu dùng trực tiếp concat feature.
+- Image-only chưa đủ tin cậy và cần tinh chỉnh thêm nếu muốn dùng trong hệ thống.
