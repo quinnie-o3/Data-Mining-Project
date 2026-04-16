@@ -1,5 +1,4 @@
 model_cache/
-*.pt
 *.pth
 *.bin
 *.safetensors
