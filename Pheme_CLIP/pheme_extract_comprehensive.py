@@ -204,8 +204,8 @@ class PHEMEExtractor:
 
 if __name__ == '__main__':
     # Configuration
-    DATASET_ROOT = r'D:\ARGGGG\phemernrdataset'
-    OUTPUT_CSV = r'D:\ARGGGG\pheme_source_tweet_image_links.csv'
+    DATASET_ROOT = r'D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\phemernrdataset'
+    OUTPUT_CSV = r'D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\pheme_extract_comprehensive_result.csv'
     
     # Run extraction
     extractor = PHEMEExtractor(DATASET_ROOT, OUTPUT_CSV)

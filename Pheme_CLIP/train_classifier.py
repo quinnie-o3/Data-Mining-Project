@@ -11,11 +11,11 @@ from sklearn.metrics import (
 )
 
 # Đường dẫn file
-METADATA_PATH = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\clip_metadata.csv"
-TEXT_FEATURES_PATH = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\clip_text_features.npy"
-IMAGE_FEATURES_PATH = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\clip_image_features.npy"
-RESULTS_TXT_PATH = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\classifier_results.txt"
-RESULTS_CSV_PATH = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\classifier_results.csv"
+METADATA_PATH = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\extract_clip_features_result_metadata.csv"
+TEXT_FEATURES_PATH = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\extract_clip_features_result_text_features.npy"
+IMAGE_FEATURES_PATH = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\extract_clip_features_result_image_features.npy"
+RESULTS_TXT_PATH = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\train_classifier_result.txt"
+RESULTS_CSV_PATH = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\train_classifier_result.csv"
 
 def load_data():
     """Load metadata và features"""

@@ -1,6 +1,9 @@
 import pandas as pd
 
-for fname in ["clip_metadata.csv", "pheme_clip_final.csv"]:
+for fname in [
+    "extract_clip_features_result_metadata.csv",
+    "filter_downloaded_ok_result.csv",
+]:
     try:
         print("\n" + "=" * 20, fname, "=" * 20)
         df = pd.read_csv(fname)

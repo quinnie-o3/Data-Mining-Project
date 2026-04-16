@@ -7,10 +7,10 @@ from PIL import Image
 from transformers import CLIPModel, CLIPProcessor
 
 
-INPUT_CSV = Path(r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\pheme_clip_final.csv")
-OUTPUT_METADATA = Path(r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\clip_metadata.csv")
-OUTPUT_TEXT_FEATURES = Path(r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\clip_text_features.npy")
-OUTPUT_IMAGE_FEATURES = Path(r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\clip_image_features.npy")
+INPUT_CSV = Path(r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\filter_downloaded_ok_result.csv")
+OUTPUT_METADATA = Path(r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\extract_clip_features_result_metadata.csv")
+OUTPUT_TEXT_FEATURES = Path(r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\extract_clip_features_result_text_features.npy")
+OUTPUT_IMAGE_FEATURES = Path(r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\extract_clip_features_result_image_features.npy")
 
 MODEL_NAME = "openai/clip-vit-base-patch32"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

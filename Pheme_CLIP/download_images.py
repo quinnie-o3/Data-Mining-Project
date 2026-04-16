@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 import time
 
 INPUT_CSV = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\pheme_clip_ready.csv"
-OUTPUT_CSV = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\pheme_clip_ready_downloaded.csv"
+OUTPUT_CSV = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\download_images_result.csv"
 IMAGE_DIR = r"D:\ARGGGG\Semester 6\DATA MINING\Pheme_CLIP\pheme_images"
 
 os.makedirs(IMAGE_DIR, exist_ok=True)
