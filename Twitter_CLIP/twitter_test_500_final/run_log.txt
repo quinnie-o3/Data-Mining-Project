@@ -1,14 +1,42 @@
-2026-04-16 09:38:07 | INFO | Project root: D:\ARGGGG\Semester 6\DATA MINING\Twitter_CLIP
-2026-04-16 09:38:07 | INFO | Output directory: D:\ARGGGG\Semester 6\DATA MINING\Twitter_CLIP\twitter_test_500_final
-2026-04-16 09:38:07 | INFO | Input dataset: D:\ARGGGG\Semester 6\DATA MINING\Twitter_CLIP\[TWITTER] danh_sach_final_binary.xlsx
-2026-04-16 09:38:08 | INFO | Loaded dataset with shape: (4369, 6)
-2026-04-16 09:38:08 | INFO | Dataset columns: ['tweetText', 'label', 'image_url', 'url_status', 'tweetText_en', 'is_translated_label']
-2026-04-16 09:38:08 | INFO | Detected id column: <none>
-2026-04-16 09:38:08 | INFO | Detected label column: label
-2026-04-16 09:38:08 | INFO | Detected text columns: ['tweetText', 'tweetText_en']
-2026-04-16 09:38:08 | INFO | Detected image columns: ['image_url']
-2026-04-16 09:38:08 | INFO | Sample mode: valid. Rows with at least text or image: 4369/4369
-2026-04-16 09:38:08 | INFO | Selected 500 rows for the sample file.
-2026-04-16 09:38:08 | INFO | Label column check passed. Missing label values in sample: 0
-2026-04-16 09:38:08 | INFO | Sample file created before CLIP: D:\ARGGGG\Semester 6\DATA MINING\Twitter_CLIP\twitter_test_500_final\twitter_sample_500.xlsx
-2026-04-16 09:38:08 | INFO | Sample-only mode enabled. Stopping before CLIP inference.
+2026-04-16 12:50:50 | INFO | Project root: D:\ARGGGG\Semester 6\DATA MINING\Twitter_CLIP
+2026-04-16 12:50:50 | INFO | Output directory: D:\ARGGGG\Semester 6\DATA MINING\Twitter_CLIP\twitter_test_500_final
+2026-04-16 12:50:50 | INFO | Input dataset: D:\ARGGGG\Semester 6\DATA MINING\Twitter_CLIP\[TWITTER] danh_sach_final_binary.xlsx
+2026-04-16 12:50:51 | INFO | Loaded dataset with shape: (4369, 6)
+2026-04-16 12:50:51 | INFO | Dataset columns: ['tweetText', 'label', 'image_url', 'url_status', 'tweetText_en', 'is_translated_label']
+2026-04-16 12:50:51 | INFO | Detected id column: <none>
+2026-04-16 12:50:51 | INFO | Detected label column: label
+2026-04-16 12:50:51 | INFO | Detected text columns: ['tweetText', 'tweetText_en']
+2026-04-16 12:50:51 | INFO | Detected image columns: ['image_url']
+2026-04-16 12:50:51 | INFO | Sample mode: valid. Rows with at least text or image: 4369/4369
+2026-04-16 12:50:51 | INFO | Selected 10 rows for the sample file.
+2026-04-16 12:50:51 | INFO | Label column check passed. Missing label values in sample: 0
+2026-04-16 12:50:51 | INFO | Sample file created before CLIP: D:\ARGGGG\Semester 6\DATA MINING\Twitter_CLIP\twitter_test_500_final\twitter_sample_10.xlsx
+2026-04-16 12:50:51 | INFO | Device selected: cpu
+2026-04-16 12:50:51 | INFO | CUDA unavailable. Falling back to CPU.
+2026-04-16 12:50:51 | ERROR | Pipeline failed: open_clip_torch is not installed. Install it with:
+pip install open_clip_torch
+Traceback (most recent call last):
+  File "D:\ARGGGG\Semester 6\DATA MINING\Twitter_CLIP\twitter_test_500_final\run_clip_twitter_500.py", line 361, in load_clip_components
+    import open_clip
+ModuleNotFoundError: No module named 'open_clip'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ARGGGG\Semester 6\DATA MINING\Twitter_CLIP\twitter_test_500_final\run_clip_twitter_500.py", line 814, in main
+    model, preprocess, tokenizer = load_clip_components(
+                                   ~~~~~~~~~~~~~~~~~~~~^
+        model_name=args.model,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        pretrained=args.pretrained,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        device=device,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\ARGGGG\Semester 6\DATA MINING\Twitter_CLIP\twitter_test_500_final\run_clip_twitter_500.py", line 363, in load_clip_components
+    raise ImportError(
+    ...<2 lines>...
+    ) from exc
+ImportError: open_clip_torch is not installed. Install it with:
+pip install open_clip_torch
