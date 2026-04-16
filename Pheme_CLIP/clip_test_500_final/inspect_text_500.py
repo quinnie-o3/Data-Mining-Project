@@ -3,7 +3,7 @@ from pathlib import Path
 import torch
 
 
-INPUT_PT = Path(__file__).resolve().parent / "text_features_final.pt"
+INPUT_PT = Path(__file__).resolve().parent / "clip_500_text_features.pt"
 INDEX = 0
 
 
@@ -30,6 +30,9 @@ def main() -> None:
     print(f"label: {record['label']}")
     print(f"text_length: {len(record['text'])}")
     print(f"text_embedding_dim: {embedding_dim(record['text_embedding'])}")
+
+    tokens = record.get("tokens", [])
+    print(f"tokens: {tokens}")
 
     token_embeddings = record.get("token_embeddings", [])
     print(f"token_count: {len(token_embeddings)}")

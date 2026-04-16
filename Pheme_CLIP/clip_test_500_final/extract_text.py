@@ -6,9 +6,9 @@ from transformers import CLIPModel, CLIPTokenizer
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-INPUT_PT = SCRIPT_DIR / "detect_objects_and_extract_clip_500_result.pt"
-INPUT_JSONL = SCRIPT_DIR / "detect_objects_and_extract_clip_500_result.jsonl"
-OUTPUT_PT = SCRIPT_DIR / "text_features_final.pt"
+INPUT_PT = SCRIPT_DIR / "clip_500_image_features.pt"
+INPUT_JSONL = SCRIPT_DIR / "clip_500_image_features.jsonl"
+OUTPUT_PT = SCRIPT_DIR / "clip_500_text_features.pt"
 CACHE_DIR = SCRIPT_DIR / "model_cache" / "huggingface"
 CLIP_MODEL_NAME = "openai/clip-vit-base-patch16"
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -79,6 +79,7 @@ def main() -> None:
                 return_tensors="pt",
             )
             inputs = {key: value.to(DEVICE) for key, value in inputs.items()}
+            input_ids = inputs["input_ids"].squeeze(0).cpu()
 
             text_outputs = clip_model.text_model(
                 input_ids=inputs["input_ids"],
@@ -88,7 +89,10 @@ def main() -> None:
             text_embedding = normalize_embedding(text_features).squeeze(0).cpu()
             last_hidden = text_outputs.last_hidden_state.squeeze(0).cpu()
             attention_mask = inputs["attention_mask"].squeeze(0).cpu()
-            real_token_embeddings = last_hidden[attention_mask.bool()]
+            keep_mask = attention_mask.bool()
+            real_token_embeddings = last_hidden[keep_mask]
+            real_token_ids = input_ids[keep_mask]
+            real_tokens = tokenizer.convert_ids_to_tokens(real_token_ids.tolist())
 
             text_records.append(
                 {
@@ -96,6 +100,8 @@ def main() -> None:
                     "label": label,
                     "text": text,
                     "text_embedding": text_embedding.tolist(),
+                    "token_ids": real_token_ids.tolist(),
+                    "tokens": real_tokens,
                     "token_embeddings": real_token_embeddings.tolist(),
                     "attention_mask": attention_mask.tolist(),
                 }

@@ -3,7 +3,7 @@ from pathlib import Path
 import torch
 
 
-INPUT_PT = Path(__file__).resolve().parent / "detect_objects_and_extract_clip_500_result.pt"
+INPUT_PT = Path(__file__).resolve().parent / "clip_500_image_features.pt"
 INDEX = 0
 
 
