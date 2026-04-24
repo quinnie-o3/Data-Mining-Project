@@ -34,7 +34,7 @@ def main() -> None:
                 text_record = text_lookup[sample_id]
                 combined_data.append(
                     {
-                        "sample_id": sample_id,
+                        "tweet_id": sample_id,
                         "label": image_record["label"],
                         "text": image_record["text"],
                         "image_path": image_record["image_path"],
