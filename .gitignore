@@ -1,0 +1,29 @@
+.venv/
+__pycache__/
+*.pyc
+
+image/*
+model_cache/
+Preprocessing/Data/CACHE/*
+Preprocessing/Data/RAW/*
+Preprocessing/Data/INTERIM/*
+Preprocessing/Data/FINAL/*
+Preprocessing/Data/LOGS/*
+Preprocessing/Data/File quá trình xử lý CLIP/*
+
+*.pt
+*.pt.bak
+*.pth
+*.safetensors
+*.jsonl
+*.csv
+*.xlsx
+*.log
+
+!image/.gitkeep
+!Preprocessing/Data/CACHE/.gitkeep
+!Preprocessing/Data/RAW/.gitkeep
+!Preprocessing/Data/INTERIM/.gitkeep
+!Preprocessing/Data/FINAL/.gitkeep
+!Preprocessing/Data/LOGS/.gitkeep
+!Preprocessing/Data/File quá trình xử lý CLIP/.gitkeep
